@@ -176,20 +176,24 @@
   @media(max-width:560px){.fn-stage{width:100%!important;padding:15px 18px}.fn-stage .val{font-size:27px}}
 
   /* before / after contrast */
-  .contrast{display:grid;grid-template-columns:1fr 46px 1fr;margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
-  .contrast .col{padding:22px 22px}
-  .contrast .col.before{background:#EEF3F9}
-  .contrast .col.after{background:linear-gradient(180deg,#E7F1FC,#FBFDFF)}
-  .contrast .tg{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0 0 13px}
-  .contrast .before .tg{color:var(--muted)}
-  .contrast .after .tg{color:var(--accent-ink)}
-  .contrast ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-  .contrast li{font-size:14px;color:var(--ink-soft);padding-left:22px;position:relative;line-height:1.65}
-  .contrast li b{color:var(--ink);font-weight:700}
-  .contrast .before li::before{content:"×";position:absolute;left:0;top:-1px;color:#B4402E;font-weight:800}
-  .contrast .after li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--good);font-weight:800}
-  .contrast .mid{display:grid;place-items:center;background:var(--band);color:#fff;font-size:19px}
-  @media(max-width:560px){.contrast{grid-template-columns:1fr}.contrast .mid{padding:8px 0;font-size:16px}.contrast .mid span{transform:rotate(90deg);display:inline-block}}
+  .contrast{display:grid;grid-template-columns:1fr 56px 1fr;gap:12px;align-items:stretch;margin:28px 0}
+  .ba-card{border-radius:16px;padding:18px 20px 6px;border:1px solid var(--line)}
+  .ba-card.before{background:#F4F7FB}
+  .ba-card.after{background:linear-gradient(180deg,#E9F6EF,#FBFEFC);border-color:#BCE3CB}
+  .ba-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 13px;border-radius:999px;margin-bottom:4px}
+  .ba-card.before .ba-badge{background:#E3E8F0;color:#5B6675}
+  .ba-card.after .ba-badge{background:var(--good);color:#fff}
+  .ba-item{display:flex;gap:11px;align-items:flex-start;padding:13px 2px;border-top:1px solid rgba(20,40,68,.08);font-size:14.5px;line-height:1.6}
+  .ba-card .ba-item:first-of-type{border-top:0}
+  .ba-card.before .ba-item{color:var(--ink-soft)}
+  .ba-card.after .ba-item{color:var(--ink);font-weight:600}
+  .ba-item b{font-weight:800}
+  .ba-item .ic{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px;line-height:1}
+  .ba-card.before .ic{background:#DDE2EA;color:#7C8494}
+  .ba-card.after .ic{background:var(--good);color:#fff}
+  .ba-mid{display:grid;place-items:center}
+  .ba-mid .arrowbadge{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--good));color:#fff;display:grid;place-items:center;font-size:19px;font-weight:800;box-shadow:0 8px 18px -6px rgba(14,109,209,.45)}
+  @media(max-width:560px){.contrast{grid-template-columns:1fr;gap:0}.ba-mid{padding:6px 0}.ba-mid .arrowbadge{transform:rotate(90deg)}}
 
   /* targeting refinement */
   .refine{display:grid;grid-template-columns:1fr 44px 1.35fr;align-items:center;margin:22px 0 8px}
@@ -287,22 +291,18 @@
       <p class="lead"><span class="step">03</span>導入後の成果</p>
       <h4>初月で申請345件・アポ9件。商談の質は「身のある話が大半」</h4>
       <div class="contrast">
-        <div class="col before">
-          <p class="tg">Before ・ 導入前</p>
-          <ul>
-            <li>新規開拓は<b>紹介・X・問い合わせのみ</b></li>
-            <li>自分から新規アプローチする<b>手段がなかった</b></li>
-            <li>一人法人で新規営業に<b>リソースを割けない</b></li>
-          </ul>
+        <div class="ba-card before">
+          <span class="ba-badge">BEFORE ・ 導入前</span>
+          <div class="ba-item"><span class="ic">×</span><span>新規開拓は<b>紹介・X・問い合わせのみ</b></span></div>
+          <div class="ba-item"><span class="ic">×</span><span>自分から新規アプローチする<b>手段がなかった</b></span></div>
+          <div class="ba-item"><span class="ic">×</span><span>一人法人で新規営業に<b>リソースを割けない</b></span></div>
         </div>
-        <div class="mid"><span>→</span></div>
-        <div class="col after">
-          <p class="tg">After ・ 導入1か月</p>
-          <ul>
-            <li>LinkedInで<b>能動的に新規開拓</b>できる状態に</li>
-            <li>申請345件から<b>アポ9件を自力で獲得</b></li>
-            <li>テレアポ・紹介では<b>届かない層と商談</b></li>
-          </ul>
+        <div class="ba-mid"><span class="arrowbadge">→</span></div>
+        <div class="ba-card after">
+          <span class="ba-badge">AFTER ・ 導入1か月</span>
+          <div class="ba-item"><span class="ic">✓</span><span>LinkedInで<b>能動的に新規開拓</b>できる状態に</span></div>
+          <div class="ba-item"><span class="ic">✓</span><span>申請345件から<b>アポ9件を自力で獲得</b></span></div>
+          <div class="ba-item"><span class="ic">✓</span><span>テレアポ・紹介では<b>届かない層と商談</b></span></div>
         </div>
       </div>
       <p>4月時点ではまだ本格稼働しておらず、6月が実質フル稼働の1か月目。結果は上のダッシュボードの通りで、<b>345件の申請から104件が承認、9件のアポイントを獲得</b>した。大川氏いわく「アポの内容自体、身のある話ができているものが大半」。</p>
